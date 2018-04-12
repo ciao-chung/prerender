@@ -2,7 +2,7 @@
 var prerender = require('./lib');
 
 var server = prerender({
-  waitAfterLastRequest: 300
+  waitAfterLastRequest: 500
 });
 
 server.use(prerender.sendPrerenderHeader());
