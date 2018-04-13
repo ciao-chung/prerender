@@ -1,13 +1,9 @@
 #!/usr/bin/env node
-var prerender = require('./lib');
+const prerender = require('./lib')
+const server = prerender()
 
-var server = prerender({
-  waitAfterLastRequest: 500
-});
+server.use(prerender.sendPrerenderHeader())
+server.use(prerender.removeScriptTags())
+server.use(prerender.httpHeaders())
 
-server.use(prerender.sendPrerenderHeader());
-// server.use(prerender.blockResources());
-server.use(prerender.removeScriptTags());
-server.use(prerender.httpHeaders());
-
-server.start();
+server.start()
