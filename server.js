@@ -9,5 +9,6 @@ server.use(memeryCachePlugin)
 server.use(prerender.sendPrerenderHeader())
 server.use(prerender.removeScriptTags())
 server.use(prerender.httpHeaders())
+server.use(prerender.whitelist())
 
 server.start()
