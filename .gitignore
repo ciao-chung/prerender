@@ -4,4 +4,4 @@ node_modules/
 .elasticbeanstalk/
 .ebextensions/
 .idea/
-.prerender-pm2-config.js
+ssr.config.js
